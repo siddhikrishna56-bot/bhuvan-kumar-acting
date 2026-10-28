@@ -1869,47 +1869,93 @@ textarea.form-control {
 
 @media (max-width: 768px) {
   body {
-    padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px));
-  }
-  .mobile-sticky-bar {
-    display: block;
-  }
-  .floating-whatsapp {
-    display: none;
+    padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px));
   }
 
   .container {
-    padding: 0 1.15rem;
+    padding: 0 1rem;
   }
 
-  /* Top Bar */
-  .top-bar-inner {
-    justify-content: center;
+  /* --- Top Announcement Bar: Ultra-Slim 1-Line on Phones --- */
+  .top-bar {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.74rem;
     text-align: center;
   }
+
+  .top-bar-inner {
+    justify-content: center;
+  }
+
+  .top-bar-notice {
+    justify-content: center;
+    width: 100%;
+    gap: 0.4rem;
+  }
+
+  .top-bar .badge-live {
+    padding: 0.05rem 0.4rem;
+    font-size: 0.65rem;
+  }
+
   .top-bar-contact {
     display: none;
   }
 
-  /* Nav Menu Drawer */
+  /* --- Navbar: Compact 50px Height --- */
+  .nav-container {
+    padding: 0.5rem 1rem;
+  }
+
+  .brand-logo-frame {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    padding: 2px;
+  }
+
+  .brand-title {
+    font-size: 0.98rem;
+    line-height: 1.15;
+  }
+
+  .brand-subtitle {
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+  }
+
+  .brand-reg {
+    display: none; /* Hide reg in mobile header to prevent clutter */
+  }
+
+  .nav-hamburger {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  /* --- Nav Drawer --- */
   .nav-menu {
     position: fixed;
-    top: 68px;
+    top: 60px;
     left: 0;
     width: 100%;
-    background: rgba(15, 15, 20, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(13, 13, 18, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     border-bottom: 1px solid var(--border-gold);
     flex-direction: column;
-    padding: 1.75rem 1.5rem;
-    gap: 1.1rem;
+    padding: 1.5rem 1.25rem;
+    gap: 1rem;
     transform: translateY(-120%);
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-    max-height: calc(100vh - 70px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
+    max-height: calc(100vh - 65px);
     overflow-y: auto;
   }
 
@@ -1920,79 +1966,178 @@ textarea.form-control {
   }
 
   .nav-link {
-    font-size: 1.05rem;
-    padding: 0.5rem 0;
+    font-size: 1rem;
+    padding: 0.55rem 0;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .nav-cta-group .btn {
     display: none;
   }
 
-  .nav-hamburger {
-    display: flex;
+  /* --- Hero Section Mobile Polish --- */
+  .hero {
+    padding: 1.75rem 0 2rem;
   }
 
-  /* Hero Section */
-  .hero {
-    padding: 2.75rem 0 2rem;
+  .hero-badge-pill {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.85rem;
+    margin-bottom: 0.85rem;
   }
 
   .hero-title {
-    font-size: clamp(1.85rem, 6.5vw, 2.75rem);
+    font-size: clamp(1.6rem, 5.8vw, 2.3rem);
+    line-height: 1.22;
+    margin-bottom: 0.85rem;
+  }
+
+  .hero-lead {
+    font-size: 0.92rem;
+    line-height: 1.58;
+    margin-bottom: 1.4rem;
   }
 
   .hero-actions {
     flex-direction: column;
     width: 100%;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
   }
 
   .hero-actions .btn {
     width: 100%;
+    min-height: 48px;
+    font-size: 0.92rem;
   }
 
-  /* Hub Stats */
+  .hero-features-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 0.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .hero-feat-item {
+    font-size: 0.78rem;
+    gap: 0.4rem;
+    line-height: 1.3;
+  }
+
+  .hero-feat-item i {
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  /* Hero Right Card */
+  .hero-card-frame {
+    padding: 1.5rem 1.2rem;
+    border-radius: var(--radius-md);
+  }
+
+  .emblem-wrapper {
+    width: 125px;
+    height: 165px;
+    margin-bottom: 1rem;
+  }
+
+  .hero-card-name {
+    font-size: 1.25rem;
+  }
+
+  .hero-card-subtitle {
+    font-size: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .chaplin-inline-card {
+    padding: 0.65rem 0.9rem;
+    gap: 0.85rem;
+    margin-top: 0.85rem;
+  }
+
+  .chaplin-thumb {
+    width: 44px;
+    height: 58px;
+  }
+
+  .chaplin-inline-card p {
+    font-size: 0.84rem !important;
+  }
+
+  /* --- Quick Hub Stats --- */
   .hub-stats-strip {
     grid-template-columns: 1fr 1fr;
-    gap: 0.85rem;
-    margin-top: 2.5rem;
+    gap: 0.75rem;
+    margin-top: 2rem;
   }
 
   .stat-box {
-    padding: 1.15rem 0.75rem;
+    padding: 1rem 0.65rem;
   }
 
   .stat-number {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
   }
 
   .stat-label {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
+    line-height: 1.3;
   }
 
-  /* Cards & Sections */
+  /* --- General Section Spacing on Mobile --- */
   .philosophy, .courses, .syllabus-section, .industry, .gmb-section, .contact-section, .faq-section {
-    padding: 3.5rem 0;
+    padding: 3rem 0;
   }
 
   .section-header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
+  .section-title {
+    font-size: 1.65rem;
+  }
+
+  .section-desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  /* --- Philosophy Cards --- */
   .philosophy-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
   }
 
   .pillar-card {
-    padding: 1.85rem 1.4rem;
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .pillar-number {
+    font-size: 2.5rem;
+    top: 0.8rem;
+    right: 1rem;
+  }
+
+  .pillar-title {
+    font-size: 1.25rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.9rem;
   }
 
   .exclusivity-banner {
-    padding: 1.75rem 1.35rem;
+    padding: 1.5rem 1.25rem;
     text-align: center;
-    justify-content: center;
+  }
+
+  .exclusivity-title {
+    font-size: 1.35rem;
   }
 
   .exclusivity-cta {
@@ -2003,87 +2148,239 @@ textarea.form-control {
     width: 100%;
   }
 
-  /* Masterclass Card */
+  /* --- Courses Section Mobile --- */
+  .course-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .masterclass-card {
-    padding: 2rem 1.35rem;
+    padding: 1.85rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .masterclass-card .card-ribbon {
+    left: 1.25rem;
+    font-size: 0.68rem;
+    padding: 0.25rem 0.85rem;
+  }
+
+  .course-title {
+    font-size: 1.45rem;
+  }
+
+  .course-price-wrap {
+    margin: 1rem 0;
+    padding-bottom: 1rem;
   }
 
   .course-price {
-    font-size: 2.25rem;
+    font-size: 2.15rem;
+  }
+
+  .course-specs-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .spec-item {
+    padding: 0.65rem 0.75rem;
+  }
+
+  .spec-item .label {
+    font-size: 0.68rem;
+  }
+
+  .spec-item .val {
+    font-size: 0.85rem;
   }
 
   .fasttrack-card, .modules-box, .booking-form-wrap, .contact-direct-card, .gmb-info-col {
-    padding: 1.75rem 1.35rem;
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .fasttrack-title {
+    font-size: 1.2rem;
+  }
+
+  .fasttrack-price {
+    font-size: 1.4rem;
   }
 
   .calculator-wrap {
-    padding: 1.75rem 1.25rem;
-    margin-top: 2.5rem;
+    padding: 1.5rem 1.15rem;
+    margin-top: 2rem;
+    border-radius: var(--radius-md);
+  }
+
+  .calc-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .calc-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .calc-option {
+    padding: 0.9rem;
   }
 
   .calc-summary-bar {
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
+    padding: 1.15rem;
+    gap: 0.85rem;
+  }
+
+  .calc-total-amount {
+    font-size: 1.75rem;
   }
 
   .calc-summary-bar .btn {
     width: 100%;
   }
 
+  .rules-box {
+    padding: 1.15rem;
+  }
+
+  .rules-list {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  /* --- Curriculum Cards --- */
+  .syllabus-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  .syllabus-item-card {
+    padding: 1.25rem;
+  }
+
+  .syllabus-card-title {
+    font-size: 1.05rem;
+  }
+
+  .syllabus-card-desc {
+    font-size: 0.85rem;
+  }
+
+  /* --- GMB & Map --- */
+  .gmb-headline {
+    font-size: 1.45rem;
+  }
+
+  .map-container {
+    min-height: 250px;
+    height: 250px;
+  }
+
+  .gmb-actions-row .btn {
+    width: 100%;
+  }
+
+  /* --- Form Inputs --- */
   .form-group-row {
     grid-template-columns: 1fr;
     gap: 0;
   }
 
-  .industry-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+  .booking-form-wrap h3 {
+    font-size: 1.4rem;
   }
 
-  .map-container {
-    min-height: 280px;
-    height: 280px;
+  /* --- FAQ Cards --- */
+  .faq-question {
+    padding: 1.15rem 1.2rem;
+  }
+
+  .faq-question h4 {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .faq-card.open .faq-answer {
+    padding: 0 1.2rem 1.25rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.86rem;
+    line-height: 1.6;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    padding: 3rem 0 1.5rem;
   }
 
   .footer-top {
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin-bottom: 2rem;
   }
 
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+    gap: 0.65rem;
+  }
+
+  /* --- SLEEK MOBILE STICKY ACTION BAR --- */
+  .mobile-sticky-bar {
+    display: block;
+    background: rgba(13, 13, 18, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 0.4rem 0.75rem calc(0.4rem + env(safe-area-inset-bottom, 0px));
+    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.8);
+  }
+
+  .mobile-sticky-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    max-width: 480px;
+  }
+
+  .sticky-action-btn {
+    min-height: 42px;
+    padding: 0.35rem 0.2rem;
+    gap: 0.15rem;
+    font-size: 0.68rem;
+    border-radius: 8px;
+    letter-spacing: 0.03em;
+  }
+
+  .sticky-action-btn i {
+    font-size: 0.95rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 400px) {
   .nav-container {
-    padding: 0.75rem 1rem;
+    padding: 0.4rem 0.75rem;
   }
 
   .brand-title {
-    font-size: 1rem;
+    font-size: 0.88rem;
   }
 
   .brand-logo-frame {
-    width: 42px;
-    height: 42px;
+    width: 36px;
+    height: 36px;
   }
 
   .course-specs-grid {
     grid-template-columns: 1fr;
   }
 
-  .fasttrack-header {
-    flex-direction: column;
-  }
-
-  .calc-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .rules-list {
+  .hero-features-list {
     grid-template-columns: 1fr;
   }
 }
